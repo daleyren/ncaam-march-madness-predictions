@@ -1,4 +1,5 @@
-years = [year for year in range(2008, 2024 + 1)]
+years = [year for year in range(2008, 2025 + 1)]
+# years = [2025]
 
 import pandas as pd
 import numpy as np
@@ -19,7 +20,7 @@ for i, year in enumerate(years):
             opponent_points = max(scores)
         
         return pd.Series([outcome, team_points, opponent_points])
-    
+
     games_df[['Result', 'Team Points', 'Opponent Points']] = games_df['Result'].apply(parse_result)
     games_df['Point Differential'] = games_df['Team Points'] - games_df['Opponent Points']
 
@@ -28,7 +29,7 @@ for i, year in enumerate(years):
 
     # Columns to drop:
     #   Rank, Game ID, Season Year, Game Breakdown, Extra
-    games_df.drop(columns = ['Rank', 'Game ID', 'Season Year', 'Game Breakdown', 'Extra'])
+    games_df = games_df.drop(columns = ['Rank', 'Game ID', 'Season Year', 'Game Breakdown', 'Extra'])
 
     try:
         games_df.to_csv(f'game-data/{year}games.csv')    
