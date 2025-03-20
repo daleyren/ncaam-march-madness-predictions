@@ -1,5 +1,5 @@
-years = [year for year in range(2008, 2025 + 1)]
-# years = [2025]
+# years = [year for year in range(2008, 2025 + 1)]
+years = [2025]
 
 import pandas as pd
 import numpy as np

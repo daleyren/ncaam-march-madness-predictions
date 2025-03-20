@@ -1,8 +1,8 @@
 import requests
 import pandas as pd
 
-years = [year for year in range(2008, 2025 + 1)]
-# years = [2025]
+# years = [year for year in range(2008, 2025 + 1)]
+years = [2025]
 
 columns = [
     "Date", "Rank", "Team", "Conference", "Opponent", "Venue", "Result", "AdjO", "AdjD", "EffO", 
